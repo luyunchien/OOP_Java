@@ -26,18 +26,6 @@ public final class DBServer {
     new DBServer(Paths.get(".").toAbsolutePath().toFile()).blockingListenOn(8888);
   }
 
-  /**
-   * KEEP this signature (i.e. {@code edu.uob.DBServer(File)}) otherwise we won't be able to mark
-   * your submission correctly.
-   *
-   * <p>You MUST use the supplied {@code databaseDirectory} and only create/modify files in that
-   * directory; it is an error to access files outside that directory.
-   *
-   * @param databaseDirectory The directory to use for storing any persistent database files such
-   *     that starting a new instance of the server with the same directory will restore all
-   *     databases. You may assume *exclusive* ownership of this directory for the lifetime of this
-   *     server instance.
-   */
   public DBServer(File databaseDirectory) {
     // TODO implement your server logic here
     this.rootBase = new DBPath(databaseDirectory);
@@ -45,10 +33,7 @@ public final class DBServer {
 
 
   /**
-   * KEEP this signature (i.e. {@code edu.uob.DBServer.handleCommand(String)}) otherwise we won't be
-   * able to mark your submission correctly.
-   *
-   * <p>This method handles all incoming DB commands and carry out the corresponding actions.
+   <p>This method handles all incoming DB commands and carry out the corresponding actions.
    */
   public String handleCommand(String command) {
     // TODO implement your server logic here
@@ -79,9 +64,6 @@ public final class DBServer {
    * Starts a *blocking* socket server listening for new connections. This method blocks until the
    * current thread is interrupted.
    *
-   * <p>This method isn't used for marking. You shouldn't have to modify this method, but you can if
-   * you want to.
-   *
    * @param portNumber The port to listen on.
    * @throws IOException If any IO related operation fails.
    */
@@ -102,9 +84,6 @@ public final class DBServer {
 
   /**
    * Handles an incoming connection from the socket server.
-   *
-   * <p>This method isn't used for marking. You shouldn't have to modify this method, but you can if
-   * * you want to.
    *
    * @param serverSocket The client socket to read/write from.
    * @throws IOException If any IO related operation fails.
