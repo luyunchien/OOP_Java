@@ -27,7 +27,6 @@ public final class DBServer {
   }
 
   public DBServer(File databaseDirectory) {
-    // TODO implement your server logic here
     this.rootBase = new DBPath(databaseDirectory);
   }
 
@@ -36,7 +35,6 @@ public final class DBServer {
    <p>This method handles all incoming DB commands and carry out the corresponding actions.
    */
   public String handleCommand(String command) {
-    // TODO implement your server logic here
     DBCmd cmd;
     try {
       cmd = this.parser.parse(command, rootBase);
